@@ -7,7 +7,7 @@ public class AccesoXML{
         accesoDOM a = new accesoDOM();
         File f = new File("Libros.xml");
         a.abrirXMLconDOM(f);
-        a.insertarLibro("Ototsuku", "Azusa Banjo", "2020");
+        a.insertarLibro("Libro1", "Autor1", "2020");
         a.recorrerDOM();
     }
     
