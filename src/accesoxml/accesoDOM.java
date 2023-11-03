@@ -96,4 +96,34 @@ public class accesoDOM {
             return -1;
         }
     }
+    
+    public int elmininarLibro(String titulo)
+    {
+        System.out.println("Buscando el libro " + titulo + " para borrarlo");
+        try
+        {
+            Node raiz = doc.getDocumentElement();
+            NodeList nl1 = doc.getElementsByTagName("Titulo");
+            Node n1;
+            for (int i=0;i<nl1.getLength();++i)
+            {
+                n1 = nl1.item(i);
+                if (n1.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    if (n1.getChildNodes().item(0).getNodeValue().equals(titulo))
+                    {
+                        System.out.println("Borrando el nodo <Libro> con titulo " + titulo);
+                        n1.getParentNode().getParentNode().removeChild(n1.getParentNode());
+                    }
+                }
+            }
+            System.out.println("Nodo borrado");
+            return 0;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+            return -1;
+        }
+    }
 }
