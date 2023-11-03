@@ -63,4 +63,37 @@ public class accesoDOM {
             }
         }
     }
+    
+    public int insertarLibro(String titulo, String autor, String fecha)
+    {
+        try
+        {
+            System.out.println("Añadir libro al arbol DOM: " + titulo + ";" + autor + ";" + fecha);
+            //Titulo
+            Node ntitulo = doc.createElement("Titulo");
+            Node ntitulo_text = doc.createTextNode(titulo);
+            ntitulo.appendChild(ntitulo_text);
+            //Autor
+            Node nautor = doc.createElement("Autor");
+            Node nautor_text = doc.createTextNode(autor);
+            nautor.appendChild(nautor_text);
+            //Libro 
+            Node nlibro = doc.createElement("Libro");
+            ((Element)nlibro).setAttribute("publicado", fecha);
+            nlibro.appendChild(ntitulo);
+            nlibro.appendChild(nautor);
+            
+            nlibro.appendChild(doc.createTextNode("\n"));
+            
+            Node raiz = doc.getFirstChild();
+            raiz.appendChild(nlibro);
+            System.out.println("Libro insertado en DOM");
+            return 0;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+            return -1;
+        }
+    }
 }
