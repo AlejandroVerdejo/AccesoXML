@@ -25,6 +25,7 @@ public class AccesoXML{
             System.out.println("    - 1 - Leer");
             System.out.println("    - 2 - Añadir");
             System.out.println("    - 3 - Eliminar");
+            System.out.println("    - 4 - Guardar");
             System.out.println("    - 0 - Cerrar");
             opc = sc.nextInt();
             switch (opc)
@@ -48,6 +49,9 @@ public class AccesoXML{
                     titulo = sc.nextLine();
                     a.elmininarLibro(titulo);
                     break;
+                case 4:
+                    sc.nextLine();
+                    a.guardarDOMcomoArchivo("Libros.xml");
             }
         } while (opc != 0);
     }
