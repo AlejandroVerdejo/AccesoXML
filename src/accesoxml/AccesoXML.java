@@ -13,12 +13,6 @@ public class AccesoXML{
         accesoDOM a = new accesoDOM();
         File f = new File("Libros.xml");
         a.abrirXMLconDOM(f);
-        /*
-        a.insertarLibro("Libro1", "Autor1", "2020");
-        a.recorrerDOM();
-        a.elmininarLibro("Libro1");
-        a.recorrerDOM();
-        */
         do
         {
             System.out.println("Que quieres hacer con el XML:");
